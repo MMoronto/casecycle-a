@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  casenum: 1
+  name: MyString
+  insurance: false
+  treatmentplan: MyString
+
+two:
+  casenum: 1
+  name: MyString
+  insurance: false
+  treatmentplan: MyString
