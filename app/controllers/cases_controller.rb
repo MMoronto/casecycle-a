@@ -27,4 +27,14 @@ class CasesController < ApplicationController
     case.update(case_params)
     redirect_to case_path(case)
   end
+
+  private
+    def case_params
+      params.require(:case).permit(
+        :casenum,
+        :name,
+        :insurance,
+        :treatmentplan
+      )
+    end
 end
