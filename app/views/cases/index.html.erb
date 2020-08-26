@@ -1,1 +1,39 @@
 <h1>Listing Cases</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Case Number</strong></td>
+      <td><strong>Patient Name</strong></td>
+      <td><strong>Insurance</strong></td>
+    </tr>
+    <% @cases.each do |case| %>
+      <tr>
+
+        <td><%= case.name %></td>
+        <td><%= case.insurance %></td>
+        <% if current_doctor.admin %>
+          <td><%= link_to "Show #{case.name}", case_path(case) %></td>
+        <% else %>
+          <td><%= link_to "Go on #{case.name}", case_path(case) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<% if @doctor %>
+  <p>
+    <%= link_to "Back to profile", doctor_path(@doctor), {:class => "btn btn-primary"} %>
+  </p>
+<% else %>
+  <p><%= link_to 'New Case', new_case_path %></p>
+<% end %>
