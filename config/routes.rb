@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   #get 'home/index'
-  root "static#home"
+  root "home/index"
   get '/cases', to: 'cases#index', as: 'cases'
   post '/cases', to: 'cases#create'
   get '/cases/new', to: 'cases#new', as: 'new_case'
