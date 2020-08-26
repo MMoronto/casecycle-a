@@ -18,10 +18,13 @@ class CasesController < ApplicationController
   end
 
   def edit
-
+    @case = Case.find_by(id: params[:id])
+    @patient = @case.patients.builder(doctor_id: current_doctor.id)
   end
 
   def update
-
+    case = Case.find_by(id: params[:id])
+    case.update(case_params)
+    redirect_to case_path(case)
   end
 end
