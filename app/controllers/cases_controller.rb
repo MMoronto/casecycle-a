@@ -9,11 +9,12 @@ class CasesController < ApplicationController
   end
 
   def new
-
+    @case = Case.new
   end
 
   def show
-
+    @case = Case.find_by(id: params[:id])
+    @patient = @case.patients.builder(doctor_id: current_doctor.id)
   end
 
   def edit
