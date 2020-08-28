@@ -1,0 +1,23 @@
+
+<p id="notice"><%= notice %></p>
+
+
+
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
+
+<div class="center">
+
+  <div class="info">
+    <% if @doctor.admin %>
+      <p><strong>ADMIN</strong></p>
+    <% end %>
+    <p><strong>Name:</strong> <%= @doctor.name %></p>
+    <p><strong>Specialty:</strong> <%= @doctor.specialty %></p>
+    <p><strong>Medicaid?:</strong>  <%= @doctor.medicaid %></p>
+    <p><%= link_to 'See cases', cases_path %></p>
+  </div>
+</div>
