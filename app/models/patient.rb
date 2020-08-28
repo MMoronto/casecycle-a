@@ -39,7 +39,7 @@ class Patient < ApplicationRecord
   end
 
   def not_enough_coverage
-    "The current patient does not have adequate ionsurance coverage to proceed with treatment plan #{self.case.name}."
+    "The current patient does not have adequate insurance coverage to proceed with treatment plan #{self.case.name}."
   end
 
   def not_qualified_enough
