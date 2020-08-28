@@ -6,4 +6,6 @@ class Case < ActiveRecord::Base
   # validates :insurance, :presence => true,
   # validates :treatmentplan, :presence => true
 
+  has_many :patients
+  has_many :doctors, :through => :patients
 end
