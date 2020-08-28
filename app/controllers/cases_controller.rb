@@ -14,12 +14,12 @@ class CasesController < ApplicationController
 
   def show
     @case = Case.find_by(id: params[:id])
-    @patient = @case.patients.builder(doctor_id: current_doctor.id)
+    @patient = @case.patients.build(doctor_id: current_doctor.id)
   end
 
   def edit
     @case = Case.find_by(id: params[:id])
-    @patient = @case.patients.builder(doctor_id: current_doctor.id)
+    @patient = @case.patients.build(doctor_id: current_doctor.id)
   end
 
   def update
