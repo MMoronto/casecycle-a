@@ -25,5 +25,24 @@ class Patient < ApplicationRecord
     end
     return [doctor_accepts_medicaid, doctor_is_qualified]
   end
- 
+
+  def start_treatment
+    new_happiness = self.doctor.happiness + self.case.happiness_rating
+    new_nausea = self.doctor.nausea + self.case.nausea_rating
+    new_ticket_count = self.doctor.medicaid - self.case.medicaid
+    self.doctor.update(
+      :happiness => new_happiness,
+      :nausea => new_nausea,
+      :tickets => new_ticket_count
+    )
+    "You have succesfully initiated a treatment plan for #{self.case.name}!"
+  end
+
+  def not_enough_coverage
+    "The current patient does not have adequate ionsurance coverage to proceed with treatment plan #{self.case.name}."
+  end
+
+  def not_qualified_enough
+    "You are not qualified enough to perform the required procedure for  #{self.case.name}."
+  end
 end
