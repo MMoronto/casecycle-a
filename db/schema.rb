@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_24_033905) do
 
-  create_table "cases", force: :cascade do |t|
+  create_table "treatments", force: :cascade do |t|
     t.integer "casenum"
     t.string "name"
     t.boolean "insurance"
