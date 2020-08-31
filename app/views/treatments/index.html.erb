@@ -1,4 +1,4 @@
-<h1>Listing Cases</h1>
+<h1>Listing Treatments</h1>
 
 
 <table class="table">
@@ -14,15 +14,15 @@
       <td><strong>Patient Name</strong></td>
       <td><strong>Insurance</strong></td>
     </tr>
-    <% @cases.each do |case| %>
+    <% @treatments.each do |treatment| %>
       <tr>
 
-        <td><%= case.name %></td>
-        <td><%= case.insurance %></td>
+        <td><%= treatment.name %></td>
+        <td><%= treatment.insurance %></td>
         <% if current_doctor.admin %>
-          <td><%= link_to "Show #{case.name}", case_path(case) %></td>
+          <td><%= link_to "Show #{treatment.name}", treatment_path(treatment) %></td>
         <% else %>
-          <td><%= link_to "Go on #{case.name}", case_path(case) %></td>
+          <td><%= link_to "Go on #{treatment.name}", treatment_path(case) %></td>
         <% end %>
       </tr>
     <% end %>
@@ -35,5 +35,5 @@
     <%= link_to "Back to profile", doctor_path(@doctor), {:class => "btn btn-primary"} %>
   </p>
 <% else %>
-  <p><%= link_to 'New Case', new_case_path %></p>
+  <p><%= link_to 'New treatment', new_treatment_path %></p>
 <% end %>

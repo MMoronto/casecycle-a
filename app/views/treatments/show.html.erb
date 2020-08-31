@@ -4,17 +4,17 @@
 <div class="center">
 
   <div class="info">
-    <p><strong>Patient Name:</strong> <%= @case.name %></p>
-    <p><strong>Doctor Name:</strong> <%= @case.doctor.name %></p>
-    <p><strong>Case Number:</strong> <%= @case.casenum %> inches</p>
-    <p><strong>Insurance Info:</strong> <%= @case.insurance %></p>
-    <p><strong>Treatment Plan:</strong> <%= @case.treatmentplan %></p>
+    <p><strong>Patient Name:</strong> <%= @treatment.name %></p>
+    <p><strong>Doctor Name:</strong> <%= @treatment.doctor.name %></p>
+    <p><strong>Case Number:</strong> <%= @treatment.casenum %> inches</p>
+    <p><strong>Insurance Info:</strong> <%= @treatment.insurance %></p>
+    <p><strong>Treatment Plan:</strong> <%= @treatment.treatmentplan %></p>
     <% if current_doctor.admin %>
-      <%= link_to 'Edit Case', [:edit, @case] %></p>
+      <%= link_to 'Edit Treatment', [:edit, @treatment] %></p>
     <% else %>
       <%= form_for @patient do |f| %>
         <%= f.hidden_field :patient_id %><br />
-        <%= f.hidden_field :case_id %><br />
+        <%= f.hidden_field :treatment_id %><br />
         <%= f.submit "Approve this patient", class:"btn btn-light" %>
       <% end %>
     <% end %>
