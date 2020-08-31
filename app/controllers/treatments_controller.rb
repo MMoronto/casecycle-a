@@ -1,4 +1,4 @@
-class CasesController < ApplicationController
+class TreatmentsController < ApplicationController
   def index
     @treatment = Treatment.all
   end

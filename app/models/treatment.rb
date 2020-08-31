@@ -1,4 +1,4 @@
-class Case < ActiveRecord::Base
+class Treatment < ActiveRecord::Base
   attr_accessible :casenum, :name, :insurance, :treatmentplan
 
   validates :casenum, presence => true
