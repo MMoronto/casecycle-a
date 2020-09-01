@@ -22,7 +22,7 @@
         <% if current_doctor.admin %>
           <td><%= link_to "Show #{treatment.name}", treatment_path(treatment) %></td>
         <% else %>
-          <td><%= link_to "Go on #{treatment.name}", treatment_path(case) %></td>
+          <td><%= link_to "Go on #{treatment.name}", treatment_path(treatment) %></td>
         <% end %>
       </tr>
     <% end %>

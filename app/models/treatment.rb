@@ -1,5 +1,5 @@
 class Treatment < ActiveRecord::Base
-  attr_accessible :casenum, :name, :insurance, :treatmentplan
+  # attr_accessible :casenum, :name, :insurance, :treatmentplan
 
   validates :casenum, :presence => true
   validates :name, :presence => true
