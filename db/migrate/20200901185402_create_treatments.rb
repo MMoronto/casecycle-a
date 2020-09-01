@@ -4,7 +4,7 @@ class CreateTreatments < ActiveRecord::Migration[6.0]
       t.integer :casenum
       t.string :name
       t.boolean :insurance
-      t.string :treatmentplan
+      t.boolean :treatmentplan
 
       t.timestamps
     end
