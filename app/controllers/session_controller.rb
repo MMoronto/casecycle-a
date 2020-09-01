@@ -8,7 +8,7 @@ class SessionController < ApplicationController
   def create
     if @doctor = Doctor.find_by(name: params[:doctor][:name])
       session[:doctor_id] = @doctor.id
-      redirect_to user_path(@doctor)
+      redirect_to doctor_path(@doctor)
     else
       render 'new'
     end
