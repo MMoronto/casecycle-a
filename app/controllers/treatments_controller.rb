@@ -25,7 +25,7 @@ class TreatmentsController < ApplicationController
   def update
     treatment = Treatment.find_by(id: params[:id])
     treatment.update(treatment_params)
-    redirect_to treatment_path(case)
+    redirect_to treatment_path(treatment)
   end
 
   private
