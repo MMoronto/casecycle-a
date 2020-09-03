@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get '/doctors/:id', to: 'doctors#show', as: 'doctor'
   get '/doctors/:id/edit', to: 'doctors#edit', as: 'edit_doctor'
   get '/treatments', to: 'treatments#index', as: 'treatments'
+  get '/signin', to: 'session#new', as: 'signin'
+  post '/session', to: 'session#create', as: 'session'
   post '/treatments', to: 'treatments#create'
   get '/treatments/new', to: 'treatments#new', as: 'new_treatment'
   get '/treatments/:id', to: 'treatments#show', as: 'treatment'
   get '/treatments/:id/edit', to: 'treatments#edit', as: 'edit_treatment'
   patch '/treatments/:id', to: 'treatments#update'
   post '/patients', to: 'patients#create', as: 'patients'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
