@@ -13,7 +13,7 @@
       <%= link_to 'Edit Treatment', [:edit, @treatment] %></p>
     <% else %>
       <%= form_for @patient do |f| %>
-        <%= f.hidden_field :patient_id %><br />
+        <%= f.hidden_field :doctor_id %><br />
         <%= f.hidden_field :treatment_id %><br />
         <%= f.submit "Approve this patient", class:"btn btn-light" %>
       <% end %>
